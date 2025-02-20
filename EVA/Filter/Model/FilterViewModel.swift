@@ -7,15 +7,8 @@
 
 import Foundation
 import SwiftUI
-import Alamofire
 
-// MARK: - Decodable Struct for API Response
-struct ImageStatusResponse: Decodable {
-    let status: String
-    let processed_image_url: String?
-}
-
-class FilterViewModel: ObservableObject {
+class FilterViewModel: NSObject, ObservableObject, URLSessionTaskDelegate {
     
     private let model: FilterModel
     
@@ -23,114 +16,143 @@ class FilterViewModel: ObservableObject {
     @Published var downloadProgress: Double = 0.0
     @Published var uploadProgress: Double = 0.0
     @Published var showRollingProgress: Bool = false
-    
     @Published var filteredImg: UIImage?
     @Published var va: String = "1.94"
     @Published var cs: String = "1.27"
     @Published var filteredImgName = "null"
-    @Published var status: String = "Not started"
     
-    private var statusTimer: Timer?
-    
-    let progressQueue = DispatchQueue(label: "com.alamofire.progressQueue", qos: .utility)
+    private var timer: Timer?
     
     init(_ model: FilterModel) {
         self.model = model
     }
     
-    // MARK: - Upload Image & Start Polling for Status
+    // MARK: - URLSession Configuration for Background Upload
+    private lazy var backgroundSession: URLSession = {
+        let config = URLSessionConfiguration.background(withIdentifier: "com.eva.upload")
+        config.isDiscretionary = false  // Ensure upload runs even on low battery
+        config.sessionSendsLaunchEvents = true  // Allows app to resume on upload completion
+        return URLSession(configuration: config, delegate: self, delegateQueue: nil)
+    }()
+    
+    // MARK: - Upload Image
     func filterImage(_ originalImgData: Data?, imgName: String, mimeType: String, cs: String, va: String) {
-        guard let imageData = originalImgData else {
-            print("Error: No image data found.")
-            return
-        }
+        guard let originalImgData = originalImgData, imgName != "null" else { return }
+
+        let url = URL(string: "http://54.164.8.50/uploadImg")!
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        let boundary = UUID().uuidString
+        request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
+
+        let body = createMultipartFormData(imageData: originalImgData, imageName: imgName, mimeType: mimeType, cs: cs, va: va, boundary: boundary)
+        request.httpBody = body
+
+        let uploadTask = backgroundSession.uploadTask(with: request, from: body)
+        uploadTask.resume()
         
-        AF.upload(multipartFormData: { multiPart in
-            multiPart.append(imageData, withName: "src_img", fileName: imgName, mimeType: mimeType)
-            multiPart.append(cs.data(using: .utf8)!, withName: "cs")
-            multiPart.append(va.data(using: .utf8)!, withName: "va")
-        },
-        to: "http://54.164.8.50/uploadImg",
-        method: .post,
-        headers: ["Content-Type": "multipart/form-data"])
-        .uploadProgress { progress in
+        print("Background upload started for \(imgName)")
+    }
+    
+    // MARK: - Create Multipart Form Data
+    private func createMultipartFormData(imageData: Data, imageName: String, mimeType: String, cs: String, va: String, boundary: String) -> Data {
+        var body = Data()
+        
+        let boundaryPrefix = "--\(boundary)\r\n"
+        
+        // Append image data
+        body.append(boundaryPrefix.data(using: .utf8)!)
+        body.append("Content-Disposition: form-data; name=\"src_img\"; filename=\"\(imageName)\"\r\n".data(using: .utf8)!)
+        body.append("Content-Type: \(mimeType)\r\n\r\n".data(using: .utf8)!)
+        body.append(imageData)
+        body.append("\r\n".data(using: .utf8)!)
+        
+        // Append cs parameter
+        body.append(boundaryPrefix.data(using: .utf8)!)
+        body.append("Content-Disposition: form-data; name=\"cs\"\r\n\r\n".data(using: .utf8)!)
+        body.append(cs.data(using: .utf8)!)
+        body.append("\r\n".data(using: .utf8)!)
+        
+        // Append va parameter
+        body.append(boundaryPrefix.data(using: .utf8)!)
+        body.append("Content-Disposition: form-data; name=\"va\"\r\n\r\n".data(using: .utf8)!)
+        body.append(va.data(using: .utf8)!)
+        body.append("\r\n".data(using: .utf8)!)
+        
+        // Close boundary
+        body.append("--\(boundary)--\r\n".data(using: .utf8)!)
+        
+        return body
+    }
+    
+    // MARK: - Background Upload Completion Handling
+    func urlSession(_ session: URLSession, task: URLSessionTask, didCompleteWithError error: Error?) {
+        if let error = error {
+            print("Upload failed: \(error.localizedDescription)")
+        } else {
+            print("Upload completed successfully.")
             DispatchQueue.main.async {
-                self.uploadProgress = progress.fractionCompleted
-                self.showRollingProgress = true
-                print("Upload Progress: \(progress.fractionCompleted)")
+                self.startPollingStatus(imageId: "1", userId: "eva1234")
             }
         }
-        .response { response in
-            guard let headers = response.response?.headers,
-                  let disposition = headers["Content-Disposition"],
-                  let filename = disposition.split(separator: "=").last.map(String.init) else {
-                print("Error retrieving filename from response headers.")
+    }
+    
+    // MARK: - Poll API for Status Every 5 Seconds
+    func startPollingStatus(imageId: String, userId: String) {
+        timer?.invalidate()  // Stop any existing timer
+        timer = Timer.scheduledTimer(withTimeInterval: 5, repeats: true) { timer in
+            self.checkImageStatus(imageId: imageId, userId: userId)
+        }
+    }
+
+    // MARK: - Check Image Processing Status
+    func checkImageStatus(imageId: String, userId: String) {
+        let url = URL(string: "http://127.0.0.1:8000/api/status/\(imageId)/\(userId)")!
+        
+        let task = URLSession.shared.dataTask(with: url) { data, response, error in
+            guard let data = data, error == nil else {
+                print("Error checking status:", error ?? "Unknown error")
                 return
             }
 
-            self.filteredImgName = filename
-            self.model.filteredImgName = self.filteredImgName
-            print("Uploaded image: \(self.filteredImgName)")
-
-            // Start polling for processing status
-            self.startPollingStatus(imageId: "1", userId: "eva1234")
-        }
-    }
-    
-    // MARK: - Automatic Status Polling
-    func startPollingStatus(imageId: String, userId: String) {
-        statusTimer?.invalidate() // Stop any existing timer
-        
-        // Start a new timer that checks status every 5 seconds
-        statusTimer = Timer.scheduledTimer(withTimeInterval: 5, repeats: true) { [weak self] _ in
-            self?.checkImageStatus(imageId: imageId, userId: userId)
-        }
-    }
-    
-    // MARK: - Check Image Processing Status
-    func checkImageStatus(imageId: String, userId: String) {
-        let url = "http://127.0.0.1:8000/api/status/\(imageId)/\(userId)"
-
-        AF.request(url).responseDecodable(of: ImageStatusResponse.self) { response in
-            switch response.result {
-            case .success(let jsonResponse):
+            if let jsonResponse = try? JSONSerialization.jsonObject(with: data) as? [String: Any],
+               let status = jsonResponse["status"] as? String {
+                
                 DispatchQueue.main.async {
-                    self.status = jsonResponse.status
-                    print("Status: \(jsonResponse.status)")
-
-                    if jsonResponse.status == "Processed", let processedImageUrl = jsonResponse.processed_image_url {
-                        self.loadProcessedImage(from: processedImageUrl)
-                        self.statusTimer?.invalidate()  // Stop polling once processed
+                    if status == "Processed", let processedImageUrl = jsonResponse["processed_image_url"] as? String {
+                        self.timer?.invalidate()
+                        print("Image processed! URL: \(processedImageUrl)")
+                        self.loadFilteredImage(from: processedImageUrl)
+                    } else {
+                        print("Processing... Status: \(status)")
                     }
                 }
-            case .failure(let error):
-                print("Error checking status: \(error)")
             }
         }
+        task.resume()
     }
     
     // MARK: - Load Processed Image
-    func loadProcessedImage(from urlString: String) {
-        guard let url = URL(string: "http://127.0.0.1:8000\(urlString)") else {
-            print("Invalid processed image URL.")
-            return
-        }
+    func loadFilteredImage(from url: String) {
+        guard let imageUrl = URL(string: "http://127.0.0.1:8000\(url)") else { return }
 
-        AF.download(url).responseData { response in
-            guard let data = response.value, let image = UIImage(data: data) else {
-                print("Failed to load processed image.")
+        let task = URLSession.shared.dataTask(with: imageUrl) { data, _, error in
+            guard let data = data, error == nil else {
+                print("Error loading processed image:", error ?? "Unknown error")
                 return
             }
-
-            DispatchQueue.main.async {
-                self.filteredImg = image
-                self.showFilteredImg = true
-                print("Loaded processed image successfully.")
+            
+            if let image = UIImage(data: data) {
+                DispatchQueue.main.async {
+                    self.filteredImg = image
+                    self.showFilteredImg = true
+                }
             }
         }
+        task.resume()
     }
     
-    // MARK: - Save Filtered Image
+    // MARK: - Save Image
     func saveFilteredImage() {
         model.saveFilteredImg()
         self.showFilteredImg = false
