@@ -17,20 +17,25 @@ class FilterViewModel: NSObject, ObservableObject, URLSessionTaskDelegate {
     @Published var uploadProgress: Double = 0.0
     @Published var showRollingProgress: Bool = false
     @Published var filteredImg: UIImage?
+    @Published var filteredImgURL: String?  // 🔹 NEW: Holds processed image URL
+    @Published var isUploading: Bool = false // 🔹 NEW: Tracks if an upload is in progress
+    @Published var uploadCompleted: Bool = false // 🔹 NEW: Triggers UI update when upload is done
+
     @Published var va: String = "1.94"
     @Published var cs: String = "1.27"
     @Published var filteredImgName = "null"
     
     private var timer: Timer?
     
-    init(_ model: FilterModel) {
-        self.model = model
+    override init() {
+        self.model = FilterModel()
+        super.init()
     }
     
     // MARK: - URLSession Configuration for Background Upload
     private lazy var backgroundSession: URLSession = {
         let config = URLSessionConfiguration.background(withIdentifier: "com.eva.upload")
-        config.isDiscretionary = false  // Ensure upload runs even on low battery
+        config.isDiscretionary = false  // Ensures upload runs even on low battery
         config.sessionSendsLaunchEvents = true  // Allows app to resume on upload completion
         return URLSession(configuration: config, delegate: self, delegateQueue: nil)
     }()
@@ -38,6 +43,9 @@ class FilterViewModel: NSObject, ObservableObject, URLSessionTaskDelegate {
     // MARK: - Upload Image
     func filterImage(_ originalImgData: Data?, imgName: String, mimeType: String, cs: String, va: String) {
         guard let originalImgData = originalImgData, imgName != "null" else { return }
+        
+        self.isUploading = true // 🔹 UI update: Start uploading state
+        self.uploadCompleted = false
 
         let url = URL(string: "http://54.164.8.50/uploadImg")!
         var request = URLRequest(url: url)
@@ -46,7 +54,6 @@ class FilterViewModel: NSObject, ObservableObject, URLSessionTaskDelegate {
         request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
 
         let body = createMultipartFormData(imageData: originalImgData, imageName: imgName, mimeType: mimeType, cs: cs, va: va, boundary: boundary)
-        request.httpBody = body
 
         let uploadTask = backgroundSession.uploadTask(with: request, from: body)
         uploadTask.resume()
@@ -87,11 +94,17 @@ class FilterViewModel: NSObject, ObservableObject, URLSessionTaskDelegate {
     
     // MARK: - Background Upload Completion Handling
     func urlSession(_ session: URLSession, task: URLSessionTask, didCompleteWithError error: Error?) {
+        DispatchQueue.main.async {
+            self.isUploading = false // 🔹 UI update: Stop uploading state
+            self.uploadCompleted = true // 🔹 Notify UI that upload finished
+        }
+
         if let error = error {
             print("Upload failed: \(error.localizedDescription)")
         } else {
             print("Upload completed successfully.")
             DispatchQueue.main.async {
+                // Start polling after upload is complete
                 self.startPollingStatus(imageId: "1", userId: "eva1234")
             }
         }
@@ -122,6 +135,7 @@ class FilterViewModel: NSObject, ObservableObject, URLSessionTaskDelegate {
                     if status == "Processed", let processedImageUrl = jsonResponse["processed_image_url"] as? String {
                         self.timer?.invalidate()
                         print("Image processed! URL: \(processedImageUrl)")
+                        self.filteredImgURL = processedImageUrl // 🔹 UI update: Store processed image URL
                         self.loadFilteredImage(from: processedImageUrl)
                     } else {
                         print("Processing... Status: \(status)")
@@ -150,11 +164,5 @@ class FilterViewModel: NSObject, ObservableObject, URLSessionTaskDelegate {
             }
         }
         task.resume()
-    }
-    
-    // MARK: - Save Image
-    func saveFilteredImage() {
-        model.saveFilteredImg()
-        self.showFilteredImg = false
     }
 }
