@@ -1,0 +1,673 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "BD3A2DF8-7820-4218-A984-E66FABB7C4E4"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D99C83E2-B7E3-407E-B395-1C626CDB4C68"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EVA/Camera/Model/Camera.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "467"
+            endingLineNumber = "467"
+            landmarkName = "photoOutput(_:didFinishProcessingPhoto:error:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "D99C83E2-B7E3-407E-B395-1C626CDB4C68 - 4d9f70e6c5df2f52"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "EVA.Camera.photoOutput(_: __C.AVCapturePhotoOutput, didFinishProcessingPhoto: __C.AVCapturePhoto, error: Swift.Optional&lt;Swift.Error&gt;) -&gt; ()"
+                  moduleName = "EVA"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kaiagao/Documents/Models/EVA_app/EVA/EVA/Camera/Model/Camera.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "447"
+                  endingLineNumber = "447"
+                  offsetFromSymbolStart = "1912">
+               </Location>
+               <Location
+                  uuid = "D99C83E2-B7E3-407E-B395-1C626CDB4C68 - 4d9f70e6c5df2c5a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "EVA.Camera.photoOutput(_: __C.AVCapturePhotoOutput, didFinishProcessingPhoto: __C.AVCapturePhoto, error: Swift.Optional&lt;Swift.Error&gt;) -&gt; ()"
+                  moduleName = "EVA"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kaiagao/Documents/Models/EVA_app/EVA/EVA/Camera/Model/Camera.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "455"
+                  endingLineNumber = "455"
+                  offsetFromSymbolStart = "1912">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A8C733F8-1A76-48F1-9A20-1B7D2BEBD61A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EVA/Camera/Model/CameraDataModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
+            landmarkName = "unpackPhoto(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "A8C733F8-1A76-48F1-9A20-1B7D2BEBD61A - 38377b701adcb34b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "EVA.CameraDataModel.unpackPhoto(__C.AVCapturePhoto) -&gt; Swift.Optional&lt;EVA.PhotoData&gt;"
+                  moduleName = "EVA"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kaiagao/Documents/Models/EVA_app/EVA/EVA/Camera/Model/CameraDataModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "80"
+                  endingLineNumber = "80"
+                  offsetFromSymbolStart = "1608">
+               </Location>
+               <Location
+                  uuid = "A8C733F8-1A76-48F1-9A20-1B7D2BEBD61A - 38377b701adcb34b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "EVA.CameraDataModel.unpackPhoto(__C.AVCapturePhoto) -&gt; Swift.Optional&lt;EVA.PhotoData&gt;"
+                  moduleName = "EVA"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kaiagao/Documents/Models/EVA_app/EVA/EVA/Camera/Model/CameraDataModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "80"
+                  endingLineNumber = "80"
+                  offsetFromSymbolStart = "1616">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8F808EA2-8BB4-4E39-AECF-D0FF42660685"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EVA/Camera/Model/Camera.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "374"
+            endingLineNumber = "374"
+            landmarkName = "takePhoto()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "8F808EA2-8BB4-4E39-AECF-D0FF42660685 - 16bd1d34377a9f69"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "EVA.Camera.takePhoto() -&gt; ()"
+                  moduleName = "EVA"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kaiagao/Documents/Models/EVA_app/EVA/EVA/Camera/Model/Camera.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "322"
+                  endingLineNumber = "322"
+                  offsetFromSymbolStart = "608">
+               </Location>
+               <Location
+                  uuid = "8F808EA2-8BB4-4E39-AECF-D0FF42660685 - ea8dd21797c21edd"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable () -&gt; () in EVA.Camera.takePhoto() -&gt; ()"
+                  moduleName = "EVA"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kaiagao/Documents/Models/EVA_app/EVA/EVA/Camera/Model/Camera.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "322"
+                  endingLineNumber = "322"
+                  offsetFromSymbolStart = "204">
+               </Location>
+               <Location
+                  uuid = "8F808EA2-8BB4-4E39-AECF-D0FF42660685 - 16bd1d34377a9f69"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "EVA.Camera.takePhoto() -&gt; ()"
+                  moduleName = "EVA"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kaiagao/Documents/Models/EVA_app/EVA/EVA/Camera/Model/Camera.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "322"
+                  endingLineNumber = "322"
+                  offsetFromSymbolStart = "344">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F83F8733-F0F2-4F92-81C0-86EC2346781A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EVA/Camera/Model/Camera.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "193"
+            endingLineNumber = "193"
+            landmarkName = "configureCaptureSession(completionHandler:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C9886BE3-25E3-46C6-B754-391FB6BAFD43"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EVA/Camera/Model/Camera.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "376"
+            endingLineNumber = "376"
+            landmarkName = "takePhoto()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "145FF78D-7493-44CB-AF55-14FB0647074B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EVA/Camera/Model/Camera.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "420"
+            endingLineNumber = "420"
+            landmarkName = "takePhoto()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F72ADE74-9FF7-4C2A-BA41-74F2B9E29F5F"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EVA/Camera/Model/Camera.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "375"
+            endingLineNumber = "375"
+            landmarkName = "takePhoto()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "F72ADE74-9FF7-4C2A-BA41-74F2B9E29F5F - 16bd1d34377a9f27"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "EVA.Camera.takePhoto() -&gt; ()"
+                  moduleName = "EVA"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kaiagao/Documents/Models/EVA_app/EVA/EVA/Camera/Model/Camera.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "324"
+                  endingLineNumber = "324"
+                  offsetFromSymbolStart = "608">
+               </Location>
+               <Location
+                  uuid = "F72ADE74-9FF7-4C2A-BA41-74F2B9E29F5F - ea8dd21797c21e93"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable () -&gt; () in EVA.Camera.takePhoto() -&gt; ()"
+                  moduleName = "EVA"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kaiagao/Documents/Models/EVA_app/EVA/EVA/Camera/Model/Camera.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "324"
+                  endingLineNumber = "324"
+                  offsetFromSymbolStart = "168">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "708D3CE2-7C50-480D-AB14-8333D92E71FB"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EVA/Camera/Model/Camera.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "460"
+            endingLineNumber = "460"
+            landmarkName = "photoOutput(_:didFinishProcessingPhoto:error:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "76B35EFF-0284-4095-A858-2A2285DB4CFC"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EVA/Camera/Model/CameraDataModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
+            landmarkName = "unpackPhoto(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F16B6CBB-5450-4613-8C29-F3E2ADCB5738"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EVA/Camera/Model/CameraDataModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "init()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "F16B6CBB-5450-4613-8C29-F3E2ADCB5738 - 967f2fb7b9ce9d1d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for closure #2 @Sendable () async -&gt; () in EVA.CameraDataModel.init() -&gt; EVA.CameraDataModel"
+                  moduleName = "EVA"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kaiagao/Documents/Models/EVA_app/EVA/EVA/Camera/Model/CameraDataModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "68">
+               </Location>
+               <Location
+                  uuid = "F16B6CBB-5450-4613-8C29-F3E2ADCB5738 - aa638934d4e3d048"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) await resume partial function for closure #2 @Sendable () async -&gt; () in EVA.CameraDataModel.init() -&gt; EVA.CameraDataModel"
+                  moduleName = "EVA"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kaiagao/Documents/Models/EVA_app/EVA/EVA/Camera/Model/CameraDataModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "48">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CC77AE96-9E33-4DE1-8B22-D50374258CE3"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EVA/Camera/Model/CameraDataModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
+            landmarkName = "handleCameraPhotos()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1523A93E-A05C-4F54-A2F4-658D2406A2C1"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EVA/Camera/Model/CameraDataModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
+            landmarkName = "handleCameraPhotos()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "03F0ADCB-FB41-4CC3-A3F7-D2149FA57E4F"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EVA/Camera/Model/Camera.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "405"
+            endingLineNumber = "405"
+            landmarkName = "takePhoto()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "03F0ADCB-FB41-4CC3-A3F7-D2149FA57E4F - ea8dd21797c216bc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable () -&gt; () in EVA.Camera.takePhoto() -&gt; ()"
+                  moduleName = "EVA"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kaiagao/Documents/Models/EVA_app/EVA/EVA/Camera/Model/Camera.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "385"
+                  endingLineNumber = "385"
+                  offsetFromSymbolStart = "2060">
+               </Location>
+               <Location
+                  uuid = "03F0ADCB-FB41-4CC3-A3F7-D2149FA57E4F - ea8dd21797c216bc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable () -&gt; () in EVA.Camera.takePhoto() -&gt; ()"
+                  moduleName = "EVA"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kaiagao/Documents/Models/EVA_app/EVA/EVA/Camera/Model/Camera.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "385"
+                  endingLineNumber = "385"
+                  offsetFromSymbolStart = "1548">
+               </Location>
+               <Location
+                  uuid = "03F0ADCB-FB41-4CC3-A3F7-D2149FA57E4F - ea8dd21797c216bc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable () -&gt; () in EVA.Camera.takePhoto() -&gt; ()"
+                  moduleName = "EVA"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kaiagao/Documents/Models/EVA_app/EVA/EVA/Camera/Model/Camera.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "385"
+                  endingLineNumber = "385"
+                  offsetFromSymbolStart = "1736">
+               </Location>
+               <Location
+                  uuid = "03F0ADCB-FB41-4CC3-A3F7-D2149FA57E4F - ea8dd21797c215b4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable () -&gt; () in EVA.Camera.takePhoto() -&gt; ()"
+                  moduleName = "EVA"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kaiagao/Documents/Models/EVA_app/EVA/EVA/Camera/Model/Camera.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "393"
+                  endingLineNumber = "393"
+                  offsetFromSymbolStart = "1420">
+               </Location>
+               <Location
+                  uuid = "03F0ADCB-FB41-4CC3-A3F7-D2149FA57E4F - ea8dd21797c215b4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable () -&gt; () in EVA.Camera.takePhoto() -&gt; ()"
+                  moduleName = "EVA"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kaiagao/Documents/Models/EVA_app/EVA/EVA/Camera/Model/Camera.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "393"
+                  endingLineNumber = "393"
+                  offsetFromSymbolStart = "1608">
+               </Location>
+               <Location
+                  uuid = "03F0ADCB-FB41-4CC3-A3F7-D2149FA57E4F - ea8dd21797c215b4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable () -&gt; () in EVA.Camera.takePhoto() -&gt; ()"
+                  moduleName = "EVA"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kaiagao/Documents/Models/EVA_app/EVA/EVA/Camera/Model/Camera.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "393"
+                  endingLineNumber = "393"
+                  offsetFromSymbolStart = "1548">
+               </Location>
+               <Location
+                  uuid = "03F0ADCB-FB41-4CC3-A3F7-D2149FA57E4F - ea8dd21797c215b4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable () -&gt; () in EVA.Camera.takePhoto() -&gt; ()"
+                  moduleName = "EVA"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kaiagao/Documents/Models/EVA_app/EVA/EVA/Camera/Model/Camera.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "393"
+                  endingLineNumber = "393"
+                  offsetFromSymbolStart = "1736">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "639F527D-B925-462A-9189-DF4AA50B2FBE"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EVA/Camera/Model/Camera.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "393"
+            endingLineNumber = "393"
+            landmarkName = "takePhoto()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BA2A8B29-F245-4B4E-A5E6-5B58733B6D44"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EVA/Camera/Model/Camera.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "380"
+            endingLineNumber = "380"
+            landmarkName = "takePhoto()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "35473888-D922-4F44-8A30-41C3A1A4D4AD"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EVA/Camera/Model/CameraDataModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
+            landmarkName = "unpackPhoto(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "169D4CED-2212-43AF-AC7B-B5E770D02E51"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EVA/Camera/Model/Camera.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "215"
+            endingLineNumber = "215"
+            landmarkName = "configureCaptureSession(completionHandler:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "71703761-8F87-47F6-8BBD-8EE8BD90F1D5"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EVA/Camera/Model/Camera.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "196"
+            endingLineNumber = "196"
+            landmarkName = "configureCaptureSession(completionHandler:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "71703761-8F87-47F6-8BBD-8EE8BD90F1D5 - 2e926935d446db09"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "EVA.Camera.configureCaptureSession(completionHandler: (Swift.Bool) -&gt; ()) -&gt; ()"
+                  moduleName = "EVA"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kaiagao/Documents/Models/EVA_app/EVA/EVA/Camera/Model/Camera.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "190"
+                  endingLineNumber = "190"
+                  offsetFromSymbolStart = "1536">
+               </Location>
+               <Location
+                  uuid = "71703761-8F87-47F6-8BBD-8EE8BD90F1D5 - 2e926935d446db28"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "EVA.Camera.configureCaptureSession(completionHandler: (Swift.Bool) -&gt; ()) -&gt; ()"
+                  moduleName = "EVA"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kaiagao/Documents/Models/EVA_app/EVA/EVA/Camera/Model/Camera.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "189"
+                  endingLineNumber = "189"
+                  offsetFromSymbolStart = "2336">
+               </Location>
+               <Location
+                  uuid = "71703761-8F87-47F6-8BBD-8EE8BD90F1D5 - 2e926935d446dbac"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "EVA.Camera.configureCaptureSession(completionHandler: (Swift.Bool) -&gt; ()) -&gt; ()"
+                  moduleName = "EVA"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kaiagao/Documents/Models/EVA_app/EVA/EVA/Camera/Model/Camera.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "193"
+                  endingLineNumber = "193"
+                  offsetFromSymbolStart = "3140">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2A9994BB-C37A-43DA-BBC8-A31C16C2827F"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EVA/Camera/Model/Camera.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "403"
+            endingLineNumber = "403"
+            landmarkName = "takePhoto()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C2D5F0C7-0466-41CA-9435-CF4A8BA755C2"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EVA/Camera/Model/Camera.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "404"
+            endingLineNumber = "404"
+            landmarkName = "takePhoto()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F6E8C8AE-FDB8-4AB8-8C85-6F70EC71CBDC"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EVA/Camera/Model/CameraDataModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "99"
+            endingLineNumber = "99"
+            landmarkName = "unpackPhoto(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
